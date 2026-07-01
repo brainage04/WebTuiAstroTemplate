@@ -1,0 +1,78 @@
+---
+import PageHeader from '../components/PageHeader.astro';
+import StatCard from '../components/StatCard.astro';
+import TerminalPanel from '../components/TerminalPanel.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const starterSteps = [
+  'Edit src/site.config.ts for name, nav, owner, and source links.',
+  'Replace this page with your app, calculator, recipe, tool, or landing content.',
+  'Keep shared layout and panel components; add project-specific components beside them.',
+  'Set PUBLIC_BASE_PATH=/YourRepoName for GitHub Pages project sites.',
+] as const;
+
+const featureCards = [
+  {
+    title: 'Astro shell',
+    body: 'Static by default, strict TypeScript, base-path aware links, and an optional GitHub Pages workflow.',
+  },
+  {
+    title: 'WebTUI surface',
+    body: 'Dark terminal palette, sticky nav, skip link, panels, badges, tables, forms, and responsive grids.',
+  },
+  {
+    title: 'Project-ready seams',
+    body: 'Central site config, reusable layout components, and one sample client script for browser behavior.',
+  },
+] as const;
+---
+
+<SiteLayout title="Home">
+  <div class="site-stack">
+    <PageHeader
+      eyebrow="Astro + WebTUI starter"
+      title="Ship another terminal-flavored website faster."
+      description="A reusable base distilled from GifStudio and BakingCookingRecipes: shared layout, WebTUI styling, GitHub Pages-friendly routing, and clean places for project-specific data and UI."
+    />
+
+    <div class="hero-actions" aria-label="Template actions">
+      <a class="action-button" href="#quick-start" is-="button">Start here</a>
+      <a class="action-button action-button--ghost" href="#features" is-="button">View features</a>
+    </div>
+
+    <section class="metric-grid" aria-label="Template contents">
+      <StatCard label="Framework" value="Astro 7" note="Strict TypeScript config" />
+      <StatCard label="UI layer" value="WebTUI" note="Terminal-inspired components" />
+      <StatCard label="Deploy target" value="Pages" note="Base-path aware by env" />
+    </section>
+
+    <TerminalPanel title="Quick start" id="quick-start">
+      <ol class="timeline">
+        {starterSteps.map((step) => <li>{step}</li>)}
+      </ol>
+
+      <div class="terminal-command" aria-label="Install and run commands">
+        <code>npm install</code>
+        <code>npm run dev</code>
+        <code>PUBLIC_BASE_PATH=/YourRepoName npm run build</code>
+      </div>
+    </TerminalPanel>
+
+    <section class="grid" id="features" aria-label="Template features">
+      {featureCards.map((feature) => (
+        <TerminalPanel title={feature.title} class="feature-card" shear="none">
+          <p>{feature.body}</p>
+        </TerminalPanel>
+      ))}
+    </section>
+
+    <TerminalPanel title="Interactive pattern">
+      <div class="status-demo">
+        <p id="status-output" aria-live="polite">Client scripts live in <code>src/scripts</code> and target explicit element IDs.</p>
+        <button class="action-button" type="button" id="status-button" is-="button">Update status</button>
+      </div>
+    </TerminalPanel>
+  </div>
+
+  <script src="../scripts/home.ts"></script>
+</SiteLayout>

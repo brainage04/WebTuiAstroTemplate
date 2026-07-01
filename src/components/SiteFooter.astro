@@ -1,0 +1,37 @@
+---
+import { siteConfig } from '../site.config';
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 <a href={siteConfig.ownerUrl} target="_blank" rel="noreferrer">{siteConfig.ownerName}</a></span>
+    <span>Built with <a href="https://astro.build/" target="_blank" rel="noreferrer">Astro</a> + <a href="https://webtui.ironclad.sh/" target="_blank" rel="noreferrer">WebTUI</a></span>
+    <a href={siteConfig.sourceUrl} target="_blank" rel="noreferrer">Source code</a>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-block-start: 1px solid var(--foreground2);
+    color: var(--foreground2);
+  }
+
+  .footer-inner {
+    width: min(100% - 1rem, var(--site-width));
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    padding-block: 1rem;
+  }
+
+  a {
+    color: var(--foreground1);
+    text-underline-offset: 0.18em;
+  }
+
+  a:hover {
+    color: var(--accent-cyan);
+  }
+</style>
