@@ -48,7 +48,7 @@ body {
   grid-template-rows: auto 1fr auto;
   margin: 0;
   line-height: 1.55;
-  background: radial-gradient(circle at top right, color-mix(in srgb, var(--accent-cyan) 12%, transparent), transparent 28rem), var(--background0);
+  background: var(--background0);
   color: var(--foreground0);
   font-family: var(--font-family);
 }
@@ -71,7 +71,7 @@ body > * {
 
 main {
   min-width: 0;
-  width: min(100% - 1.5rem, var(--site-width));
+  width: min(100% - 3rem, var(--site-width));
   margin-inline: auto;
   padding-block: clamp(1.75rem, 4vw, 4.5rem);
 }
@@ -176,6 +176,7 @@ textarea::placeholder {
 .site-stack,
 .stack {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(1.25rem, 2.25vw, 1.85rem);
 }
 
@@ -200,21 +201,6 @@ textarea::placeholder {
   text-shadow: 0 2rem 4rem color-mix(in srgb, var(--accent-cyan) 16%, transparent);
 }
 
-.page-header .description {
-  margin: 0;
-  color: var(--foreground1);
-  font-size: clamp(1rem, 2vw, 1.18rem);
-  line-height: 1.55;
-  max-width: 68ch;
-}
-
-.eyebrow {
-  margin: 0;
-  color: var(--accent-cyan);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-}
 
 .hero-actions,
 .panel-actions {
@@ -318,6 +304,7 @@ textarea::placeholder {
 
 .timeline {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.8rem;
   margin-block: 0 1.2rem;
 }
@@ -328,12 +315,18 @@ textarea::placeholder {
 }
 
 .terminal-command {
+  min-width: 0;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.45rem;
   border: 1px solid color-mix(in srgb, var(--foreground2) 30%, transparent);
   background: color-mix(in srgb, var(--background0) 72%, transparent);
   padding: 0.8rem;
   overflow-x: auto;
+}
+
+.terminal-command code {
+  min-width: 0;
 }
 
 .terminal-command code::before {
@@ -383,7 +376,7 @@ th {
 
 @media (max-width: 640px) {
   main {
-    width: min(100% - 1rem, var(--site-width));
+    width: min(100% - 3rem, var(--site-width));
   }
 
   .terminal-panel {
