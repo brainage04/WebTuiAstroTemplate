@@ -14,7 +14,7 @@ npm ci
 npm run dev
 ```
 
-Update the navigation and repository URL in `src/config/site.ts`; keep project-specific presentation in `src/styles/site.css`.
+Update shared site metadata and navigation in `src/site.config.ts`; keep project-specific presentation in `src/styles/site.css`.
 
 ## Validation
 

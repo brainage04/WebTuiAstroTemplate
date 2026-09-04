@@ -1,12 +1,22 @@
+import type { SiteConfig } from '@brainage04/astro-shell/config';
+
 export const siteConfig = {
-  name: 'WebTUI Astro Template',
+  siteName: 'WebTUI Astro Template',
+  homeTitle: 'WebTUI Astro Template',
   description: 'A dark terminal-inspired Astro starter based on the GifStudio and BakingCookingRecipes patterns.',
-  ownerName: 'brainage04',
-  ownerUrl: 'https://github.com/brainage04',
-  sourceUrl: 'https://github.com/brainage04/WebTuiAstroTemplate',
   navItems: [
-    { name: 'Home', href: '/' },
+    { name: 'Home', href: '/', match: '/', activeMode: 'exact' },
     { name: 'Features', href: '/#features' },
     { name: 'Quick start', href: '/#quick-start' },
   ],
-} as const;
+  sourceHref: 'https://github.com/brainage04/WebTuiAstroTemplate',
+  faviconHref: undefined,
+  faviconType: undefined,
+  image: undefined,
+  themeColor: '#151515',
+  preconnectHrefs: [],
+  ownerHref: 'https://github.com/brainage04',
+  ownerName: 'brainage04',
+  creatorHref: undefined,
+  creatorName: undefined,
+} as const satisfies SiteConfig;

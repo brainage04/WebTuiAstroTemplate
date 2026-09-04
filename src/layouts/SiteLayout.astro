@@ -6,19 +6,12 @@ import '../styles/site.css';
 export interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = siteConfig.description } = Astro.props;
+const { title, description = siteConfig.description, image = siteConfig.image } = Astro.props;
 ---
 
-<ShellLayout
-  title={title}
-  siteName={siteConfig.name}
-  description={description}
-  navItems={siteConfig.navItems}
-  sourceHref={siteConfig.sourceUrl}
-  ownerHref={siteConfig.ownerUrl}
-  ownerName={siteConfig.ownerName}
->
+<ShellLayout {...siteConfig} title={title} description={description} image={image}>
   <slot />
 </ShellLayout>

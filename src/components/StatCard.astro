@@ -13,3 +13,23 @@ const { label, value, note } = Astro.props;
   <strong>{value}</strong>
   {note && <small>{note}</small>}
 </article>
+
+<style>
+  .stat-card {
+    display: grid;
+    gap: 0.45rem;
+    border-color: var(--panel-border);
+    background: color-mix(in srgb, var(--background1) 82%, transparent);
+    padding: clamp(0.9rem, 2vw, 1.2rem);
+  }
+
+  .stat-card :is(span, small) {
+    color: var(--foreground2);
+  }
+
+  .stat-card strong {
+    color: var(--accent-cyan);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1;
+  }
+</style>

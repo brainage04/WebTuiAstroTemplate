@@ -76,3 +76,74 @@ const featureCards = [
 
   <script src="../scripts/home.ts"></script>
 </SiteLayout>
+
+<style>
+  :global(.page-header h1) {
+    margin: 0;
+    max-width: 16ch;
+    font-size: clamp(2.2rem, 7vw, 4.35rem);
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+    text-shadow: 0 2rem 4rem color-mix(in srgb, var(--accent-cyan) 16%, transparent);
+  }
+
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+    gap: clamp(0.85rem, 1.8vw, 1.2rem);
+  }
+
+  :global(.feature-card p) {
+    margin: 0;
+    color: var(--foreground1);
+  }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.8rem;
+    margin-block: 0 1.2rem;
+  }
+
+  .timeline li::marker {
+    color: var(--accent-cyan);
+    font-weight: 700;
+  }
+
+  .terminal-command {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.45rem;
+    border: 1px solid color-mix(in srgb, var(--foreground2) 30%, transparent);
+    background: color-mix(in srgb, var(--background0) 72%, transparent);
+    padding: 0.8rem;
+    overflow-x: auto;
+  }
+
+  .terminal-command code {
+    min-width: 0;
+  }
+
+  .terminal-command code::before {
+    content: '$ ';
+    color: var(--accent-green);
+  }
+
+  .status-demo {
+    display: grid;
+    gap: 0.8rem;
+    justify-items: start;
+  }
+
+  .status-demo p {
+    margin: 0;
+    color: var(--foreground1);
+  }
+
+  @media (max-width: 640px) {
+    :global(.page-header h1) {
+      font-size: clamp(2rem, 13vw, 3.2rem);
+    }
+  }
+</style>
