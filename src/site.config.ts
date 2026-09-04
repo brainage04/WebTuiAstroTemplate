@@ -10,7 +10,7 @@ export const siteConfig = {
     { name: 'Quick start', href: '/#quick-start' },
   ],
   sourceHref: 'https://github.com/brainage04/WebTuiAstroTemplate',
-  faviconHref: '/favicon.jpg',
+  faviconHref: '/pfp.jpg',
   faviconType: 'image/jpeg',
   image: undefined,
   themeColor: '#151515',
