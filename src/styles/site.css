@@ -1,12 +1,5 @@
 html:root {
-  --accent-green: #9be28f;
-  --control-border: color-mix(in srgb, var(--foreground2) 54%, transparent);
   --site-main-width: 76rem;
   --site-nav-width: 76rem;
   --site-footer-width: 76rem;
-}
-
-body > * {
-  position: relative;
-  z-index: 1;
 }

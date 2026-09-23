@@ -14,7 +14,7 @@ npm ci
 npm run dev
 ```
 
-Update shared site metadata and navigation in `src/site.config.ts`; keep project-specific presentation in `src/styles/site.css`.
+The `astroShell` integration in `astro.config.mjs` supplies the layout, navigation, 404 page, and GitHub Pages site/base handling. Its `config` option takes the shared site metadata and navigation from `src/site.config.ts`, and its `styles` option lists stylesheets that load after the shell's styles. Keep project-specific presentation in `src/styles/site.css`, and add a theme such as `@brainage04/astro-shell/themes/rose.css` to `styles` before it if you want one. Pages import `@brainage04/astro-shell/components/SiteLayout.astro` directly.
 
 ## Validation
 
@@ -27,4 +27,4 @@ npm run build
 
 ## Deployment
 
-Pushes to `main` are validated and deployed to GitHub Pages through GitHub Actions. The deployment workflow derives the correct site and base path for either a user site or a project site.
+Pushes to `main` are validated and deployed to GitHub Pages by AstroShell's reusable workflows. The deployment derives the correct site and base path for either a user site or a project site.
